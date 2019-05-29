@@ -1,0 +1,63 @@
+﻿@model IEnumerable<HabitatWebApp.Models.Issue>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="center jumbotron">
+    <h2>Home Issue </h2>
+
+    <p>
+        <a asp-action="Create">Create New Issue</a>
+    </p>
+
+
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Location)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.Content)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Images)
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.Content)
+        </td>*@
+         <td>
+                @Html.DisplayFor(modelItem => item.Images)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.IssueID">Details</a>|
+                <a asp-action="Edit" asp-route-id="@item.IssueID">Edit</a>|
+                <a asp-action="Delete" asp-route-id="@item.IssueID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,65 @@
+﻿@model ManageUsersViewModel
+@{
+    ViewData["Title"] = "Manage users";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>Administrators</h3>
+<table class="table">
+    <thead>
+        <tr>
+            @*<td>Id</td>*@
+            <td>Email</td>
+        </tr>
+    </thead>
+    @foreach (var user in Model.Administrators)
+    {
+        <tr>
+            @*<td>@user.Id</td>*@
+            <td>@user.Email</td>
+        </tr>
+    }
+</table>
+<h3>Employees</h3>
+<table class="table">
+    <thead>
+        <tr>
+            @*<td>Id</td>*@
+            <td>Email</td>
+        </tr>
+    </thead>
+    @foreach (var user in Model.Employees)
+    {
+        <tr>
+            @*<td>@user.Id</td>*@
+            <td>@user.Email</td>
+        </tr>
+    }
+</table>
+<h3>All Registed Users</h3>
+<table class="table">
+    <thead>
+        <tr>
+            @*<td>Id</td>*@
+            <td>Email</td>
+        </tr>
+    </thead>
+    @foreach (var user in Model.Everyone)
+    {
+    <tr>
+        @*<td>@user.Id</td>*@
+        <td>@user.Email</td>
+
+    
+        <td>
+            @*<a asp-action="AddRole" asp-route-id="@user.Id">Edit</a>|*@
+            <a asp-area="" asp-controller="Account" asp-action="AddRole" , asp-route-id="@user.Id">Grant Employee Permission</a>
+        </td>
+
+
+        
+        <td> <a asp-area="" asp-controller="Account" asp-action="DeleteUser" , asp-route-id="@user.Id">Delete User</a></td>
+        
+
+    </tr>
+    }
+</table>

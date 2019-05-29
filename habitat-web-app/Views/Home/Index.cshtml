@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Some hobo styling  -->
+<br />
+
+<!-- Two cards on medium screens, 4 cards on large screens, small screens automatically stack -->
+<div class="row">
+    <!-- title link to view the board on a computer (rather than the TV) -->
+    <a asp-controller="Home" asp-action="Index">
+        <div class="jumbotron">
+            <h1 class="display-4">Habitat Web Portal</h1>
+            <p class="lead">Welcome to the Habitat Web Portal to manage content for the Habitat Homeowner Buddy. Get started by choosing content to update through the links below. </p>
+        </div>
+    </a>
+    <!-- Left column(s) (on smaller screens) -->
+
+    <div class="col col-lg-3 col-md-6 .mx-auto">
+        <a asp-area="" asp-controller="Issues" asp-action="Index">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title">Manage Issues</h3>
+                    <p class="card-text">
+                        Create, view, update, or delete Action Plan content.
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col col-lg-3 col-md-6 .mx-auto">
+        <a asp-controller="MaintenanceItems" asp-action="Index">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title">Manage Maintenance Reminders</h3>
+                    <p class="card-text">
+                        Create, view, update, or delete Maintenance Reminders for the Homeowner Buddy.
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- right column(s) -->
+
+
+
+
+</div>
+
+
